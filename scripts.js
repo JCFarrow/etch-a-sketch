@@ -2,7 +2,7 @@ const canvasSize = 50 * 16;
 const sizeExt = 'px';
 const maxPixelDensity = 100;
 
-const colors = ['white', 'black'];
+const colors = ['black', 'red', 'orange', 'yellow', 'rgb(0,255,0)', 'blue', 'blueviolet', 'pink', 'white'];
 let selectedColor = 'black';
 
 
@@ -23,6 +23,8 @@ for (const [index, color] of colors.entries()) {
     colorSwatch.classList.add('color-swatch');
     colorSwatch.style.background = color;
     colorSwatch.addEventListener('click', selectColor);
+
+    colorPanel.appendChild(colorSwatch);
 }
 
 renderGrid(pixelDensity);
@@ -62,5 +64,6 @@ function paint() {
 }
 
 function selectColor() {
-    //pass
+    selectedColor = this.style.background;
+    console.log(selectedColor)
 }

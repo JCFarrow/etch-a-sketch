@@ -3,13 +3,13 @@
 body {
     margin: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
+    gap: 10px 20px;
     height: 100vh;
     font-size: 20px;
     font-family: Roboto, Arial, Helvetica, sans-serif;
+    min-width: 930px;
+    min-height: 880px;
 }
 
 label {
@@ -30,14 +30,18 @@ input {
 
 #container {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 #canvas {
     /* box-sizing: border-box; */
     display: flex;
     flex-wrap: wrap;
-    border: lightgray 2px solid;
-    /* border-radius: 5px; */
+    border: 2px solid lightgray ;
+    border-radius: 3px;
 }
 
 .pixel {
@@ -46,6 +50,25 @@ input {
 }
 
 .pixel:hover {
-    border: 1px gray dashed;
+    border: 1px dashed gray ;
     /* border-radius: 5px; */
+}
+
+#colors {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.color-swatch {
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    width: 75px;
+    height: 50px;
+    flex: none;
+}
+
+.color-swatch:hover {
+    transform: scale(1.1);
 }
