@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;900&family=Roboto&display=swap');
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 100vh;
+    font-size: 20px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+label {
+    margin-right: 5px;
+}
+
+button#clear-grid {
+    margin-left: 20px;
+    font-size: 20px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+input {
+    width: 3em;
+    font-size: 20px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+#container {
+    display: flex;
+}
+
+#canvas {
+    /* box-sizing: border-box; */
+    display: flex;
+    flex-wrap: wrap;
+    border: lightgray 2px solid;
+    /* border-radius: 5px; */
+}
+
+.pixel {
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.pixel:hover {
+    border: 1px gray dashed;
+    /* border-radius: 5px; */
+}
