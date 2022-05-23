@@ -64,14 +64,14 @@ function renderGrid(pixelDensity) {
 }
 
 function updateGrid() {
-    pixelDensity = sizeInput.value;
-    if (pixelDensity > maxPixelDensity) {
+    if (this.value > maxPixelDensity) {
         this.value = maxPixelDensity;
     }
-    if (pixelDensity < 1) {
+    if (this.value < 1) {
         this.value = 1;
     }
-    renderGrid(pixelDensity);
+
+    renderGrid(this.value);
 }
 
 function paintNow() {
