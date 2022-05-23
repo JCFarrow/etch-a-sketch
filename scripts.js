@@ -2,9 +2,17 @@ const canvasSize = 50 * 16;
 const sizeExt = 'px';
 const maxPixelDensity = 100;
 
-const colors = ['black', 'red', 'orange', 'yellow', 'rgb(0,255,0)', 'blue', 'blueviolet', 'pink', 'white'];
+const colors = ['black', 'saddlebrown', 'gray', 'red', 'orange', 'yellow', 'rgb(0,255,0)', 'blue', 'blueviolet', 'pink', 'white'];
 let selectedColor = 'black';
 
+let mouseIsDown = false;
+
+window.addEventListener('mousedown', () => {
+    mouseIsDown = true;
+})
+window.addEventListener('mouseup', () => {
+    mouseIsDown = false;
+})
 
 const sizeInput = document.getElementById('grid-size');
 
@@ -18,12 +26,18 @@ const clearButton = document.getElementById('clear-grid');
 clearButton.addEventListener('click', updateGrid)
 
 const colorPanel = document.getElementById('colors');
+const colorNodes = [];
 for (const [index, color] of colors.entries()) {
     const colorSwatch = document.createElement('div');
+    
     colorSwatch.classList.add('color-swatch');
     colorSwatch.style.background = color;
+    if (color === selectedColor) {
+        colorSwatch.classList.add('selected');
+    }
     colorSwatch.addEventListener('click', selectColor);
 
+    colorNodes.push(colorSwatch);
     colorPanel.appendChild(colorSwatch);
 }
 
@@ -42,7 +56,8 @@ function renderGrid(pixelDensity) {
         pixel.style.height = `${pixelSize}${sizeExt}`;
         pixel.style.width = `${pixelSize}${sizeExt}`;
 
-        pixel.addEventListener('click', paint);
+        pixel.addEventListener('mouseenter', paint);
+        pixel.addEventListener('mousedown', paintNow);
 
         canvas.appendChild(pixel);
     }
@@ -59,11 +74,20 @@ function updateGrid() {
     renderGrid(pixelDensity);
 }
 
-function paint() {
+function paintNow() {
     this.style.background = selectedColor;
+}
+
+function paint() {
+    if (mouseIsDown) {
+        this.style.background = selectedColor;
+    }  
 }
 
 function selectColor() {
     selectedColor = this.style.background;
-    console.log(selectedColor)
+    colorNodes.forEach((node) => {
+        node.classList.remove('selected');
+    })
+    this.classList.add('selected');
 }

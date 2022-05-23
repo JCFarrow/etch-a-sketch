@@ -47,6 +47,12 @@ input {
 .pixel {
     box-sizing: border-box;
     background-color: white;
+
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .pixel:hover {
@@ -67,8 +73,15 @@ input {
     width: 75px;
     height: 50px;
     flex: none;
+    transition: transform 0.2s;
 }
 
 .color-swatch:hover {
-    transform: scale(1.1);
+    /* transform: scale(1.05); */
+    transform: translate(-5px,0px);
+}
+
+.color-swatch.selected {
+    /* transform: scale(1.1); */
+    transform: translate(-5px,0px);
 }
