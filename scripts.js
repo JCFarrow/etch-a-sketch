@@ -23,7 +23,7 @@ input.max = maxPixelDensity;
 input.addEventListener('change', updateGrid)
 
 const clearButton = document.getElementById('clear-grid');
-clearButton.addEventListener('click', updateGrid)
+clearButton.addEventListener('click', renderGrid)
 
 const colorPanel = document.getElementById('colors');
 const colorNodes = [];
@@ -41,9 +41,9 @@ for (const [index, color] of colors.entries()) {
     colorPanel.appendChild(colorSwatch);
 }
 
-renderGrid(pixelDensity);
+renderGrid();
 
-function renderGrid(pixelDensity) {
+function renderGrid() {
     const canvas = document.getElementById('canvas');
     canvas.textContent = '';
     canvas.style.width = `${canvasSize}${sizeExt}`;
