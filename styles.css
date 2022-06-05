@@ -37,7 +37,6 @@ input {
 }
 
 #canvas {
-    /* box-sizing: border-box; */
     display: flex;
     flex-wrap: wrap;
     border: 2px solid lightgray ;
@@ -57,7 +56,6 @@ input {
 
 .pixel:hover {
     border: 1px dashed gray ;
-    /* border-radius: 5px; */
 }
 
 #colors {
@@ -77,11 +75,9 @@ input {
 }
 
 .color-swatch:hover {
-    /* transform: scale(1.05); */
     transform: translate(-5px,0px);
 }
 
 .color-swatch.selected {
-    /* transform: scale(1.1); */
     transform: translate(-5px,0px);
 }

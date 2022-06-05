@@ -2,7 +2,7 @@ const canvasSize = 50 * 16;
 const sizeExt = 'px';
 const maxPixelDensity = 100;
 
-const colors = ['black', 'saddlebrown', 'gray', 'red', 'orange', 'yellow', 'rgb(0,255,0)', 'blue', 'blueviolet', 'pink', 'white'];
+const colors = ['black', 'saddlebrown', 'gray', 'red', 'orange', 'rgb(250, 250, 0)', 'rgb(0, 230, 0)', '#1767fc', 'blueviolet', 'pink', 'white'];
 let selectedColor = 'black';
 
 let mouseIsDown = false;
